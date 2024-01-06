@@ -29,7 +29,6 @@ input {
 }
 
 .crud_form {
-    display: flex;
     margin: 10px 0;
 }
 
@@ -37,8 +36,14 @@ input {
 .form_input {
     flex: 1;
     padding: 5px;
-    margin-right: 10px;
+    margin-top: 10px;
     font-size: 1rem;
+    width: 100%;
+}
+
+
+form input[type="email"]{
+	width:100%;
 }
 
 /* Estilos al botón "padre" o en general  */
@@ -56,12 +61,14 @@ input {
 
 /* Estilos especificos a "botón "primary" pero conserva propiedades del botón general "padre" */
 .button--primary {
-    background-color: aquamarine;
+    background-color: rgb(4, 176, 38);
+    margin-top: 10px;
 }
 
 /* Estilos especificos a "botón "secundary" que se crean automaticamente en la celda "acciones"*/
 .button--secundary {
-    background-color: #ffc107;
+    background-color: #dd1919;
+    margin-top: 10px;
 }
 
 /* Estilos especificos a "botón "terciary" que se crean automaticamente en la celda "acciones"*/
@@ -114,7 +121,7 @@ input {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    max-width: 600px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
