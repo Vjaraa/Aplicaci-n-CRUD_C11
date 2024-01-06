@@ -47,9 +47,12 @@ form.addEventListener('submit', function (event) {
 
     const name = nameinput.value;
     const email = emailinput.value;
+    const phone = phoneinput.value;
+    const carreer = carreerinput.value;
+    const campus = campusinput.value;
 
-    if (name && email) {
-        const newData = { name, email };
+    if (name && email && phone && carreer && campus) {
+        const newData = { name, email, phone, carreer, campus};
         data.push(newData);
         saveDataToLocalStorage();
         renderTable();
