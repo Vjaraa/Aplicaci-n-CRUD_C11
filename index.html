@@ -11,10 +11,10 @@
 <body>
     <main class="container">
         <section class="crud">
-            <h1 class="crud_title">Registro de Usuarios</h1>
+            <h1 class="crud_title">Registro de Alumnos</h1>
 
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Agregar alumno</button>
+            <button id="myBtn" class="modal-botton">Agregar alumno</button>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -29,6 +29,9 @@
                         <form id="formRegister" class="crud_form">
                             <input type="text" placeholder="Nombre" id="nameinput" class="form_input">
                             <input type="email" placeholder="Email" id="emailinput" class="form_input">
+                            <input type="phone" placeholder="Teléfono" id="phoneinput" class="form_input">
+                            <input type="carreer" placeholder="Carrera" id="carreerinput" class="form_input">
+                            <input type="campus" placeholder="Sede" id="campusinput" class="form_input">
 
                             <button type="reset" id="resetbutton" class="button button--secundary" >Cancelar</button>
                             <button type="submit" id="submitbutton" class="button button--primary" >Agregar</button>
@@ -45,6 +48,9 @@
                     <tr>
                         <th class="table_header">Nombre</th>
                         <th class="table_header">E-mail</th>
+                        <th class="table_header">Teléfono</th>
+                        <th class="table_header">Carrera</th>
+                        <th class="table_header">Sede</th>
                         <th class="table_header">Acciones</th>
                     </tr>
                 </thead>

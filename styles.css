@@ -12,7 +12,7 @@
 body,
 button,
 input {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* La clase container estará centrada, que es el contenedor "padre" de todo el formulario */
@@ -21,16 +21,29 @@ input {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
+    background: #ffedba;
 }
 
 .crud_title {
     text-align: center;
-    color: rgb(100, 100, 114);
+    color: #c29b61;
 }
 
 .crud_form {
     margin: 10px 0;
+
 }
+
+.modal-botton {
+    padding: 10px 20px;
+    background-color: #ff7d00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
 
 /* Tamaño de fuente de las entradas a 1rem unidad relativa, equivale al tamaño por defecto del navegador, 2rem = 18px * 2  */
 .form_input {
@@ -42,39 +55,44 @@ input {
 }
 
 
-form input[type="email"]{
-	width:100%;
+form input[type="email"] {
+    width: 100%;
 }
 
 /* Estilos al botón "padre" o en general  */
 .button {
-    padding: 5px 10px;
+    padding: 10px 20px;
+    background-color: #ff7d00;
+    color: white;
     border: none;
     border-radius: 5px;
-    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 15px;
 }
 
 /* efecto al pasar el mouse sobre el botón, crece 1.2  */
-.button:hover {
-    transform: scale(1.2);
+.modal-botton:hover {
+    transform: scale(1.1);
 }
 
 /* Estilos especificos a "botón "primary" pero conserva propiedades del botón general "padre" */
 .button--primary {
-    background-color: rgb(4, 176, 38);
+    background-color: #ff7d00;
     margin-top: 10px;
+    color: #fff;
 }
 
 /* Estilos especificos a "botón "secundary" que se crean automaticamente en la celda "acciones"*/
 .button--secundary {
-    background-color: #dd1919;
+    background-color: rgba(0, 0, 0, 0.35);
     margin-top: 10px;
+    color: #fff;
 }
 
 /* Estilos especificos a "botón "terciary" que se crean automaticamente en la celda "acciones"*/
-.button--terciary {
-    background-color: #dc3545;
-    color: #f0f0f0;
+.button --terciary {
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #ffff;
 }
 
 /* Estilos a la tabla del Crud */
@@ -85,12 +103,12 @@ form input[type="email"]{
 
 .table_header,
 .table_body td {
-    border: 1px solid #cccccc;
+    border: 1px solid #ffedba;
     padding: 5px;
 }
 
 .table_header {
-    background-color: #d0f9fa;
+    background-color: #fff;
 }
 
 /* Estilos para el tercer elemento de la tablebody lo que serán los botones de la celda "acciones" */
@@ -101,33 +119,35 @@ form input[type="email"]{
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 90px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    
+
+}
 
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #fefefe;
+    background-color: #c29b61;
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 1px solid #c29b61;
     max-width: 600px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
-  }
+    border: none;
+    border-radius: 5px;
+}
 
 /* The Close Button */
 .close {
@@ -135,36 +155,53 @@ form input[type="email"]{
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  .modal-header {
+.modal-header {
+    padding: 2px 16px;
+    background-color: #c29b61;
+    color: white;
+    margin-top: 15px;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
-  }
-  
-  .modal-body {padding: 2px 16px;}
-  
-  .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-  }
+}
 
-  /* Add Animation */
+/* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-  }
-  
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
