@@ -6,6 +6,7 @@ const emailinput = document.getElementById('emailinput');
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn");
 const span = document.getElementsByClassName("close")[0];
+const btnCancel = document.getElementById("resetbutton");
 
 
 
@@ -52,6 +53,7 @@ form.addEventListener('submit', function (event) {
         data.push(newData);
         saveDataToLocalStorage();
         renderTable();
+        modal.style.display = "none";
         //Función para borrar y volver a iniciar de JavaScript no se necesita crear
         form.reset();
     } else {
@@ -59,6 +61,15 @@ form.addEventListener('submit', function (event) {
 
     }
 })
+
+
+btnCancel.onclick = function () {
+    form.reset();
+    modal.style.display = "none";
+}
+
+
+
 
 //Función para guardar los datos del formulario:
 function saveDataToLocalStorage() {

@@ -14,7 +14,7 @@
             <h1 class="crud_title">Registro de Usuarios</h1>
 
             <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Open Modal</button>
+            <button id="myBtn">Agregar alumno</button>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -26,13 +26,13 @@
                         <h2>Agregar alumno</h2>
                     </div>
                     <div class="modal-body">
-                        <p>agregar formulario</p>
-                        <!-- agregar formulario -->
-                    </div>
-                    <div class="modal-footer">
-                        <button id="myBtnCancel">Cancelar</button>
-                        <button id="myBtnAdd">Agregar</button>  
-                
+                        <form id="formRegister" class="crud_form">
+                            <input type="text" placeholder="Nombre" id="nameinput" class="form_input">
+                            <input type="email" placeholder="Email" id="emailinput" class="form_input">
+
+                            <button type="reset" id="resetbutton" class="button button--primary" >Cancelar</button>
+                            <button type="submit" id="submitbutton" class="button button--primary" >Agregar</button>
+                        </form>
                     </div>
                 </div>
 
