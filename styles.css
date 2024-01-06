@@ -1,16 +1,17 @@
-
 /* fuente importada de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 /* Se reinician los espacios que se agregan por defecto, quedan en 0 */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* todo texto tendrá la fuente Montserrat, botones, entradas de texto, body, etc. */
-body, button, input {
+body,
+button,
+input {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -27,9 +28,9 @@ body, button, input {
     color: rgb(100, 100, 114);
 }
 
-.crud_form{
+.crud_form {
     display: flex;
-    margin: 10px 0;   
+    margin: 10px 0;
 }
 
 /* Tamaño de fuente de las entradas a 1rem unidad relativa, equivale al tamaño por defecto del navegador, 2rem = 18px * 2  */
@@ -49,7 +50,7 @@ body, button, input {
 }
 
 /* efecto al pasar el mouse sobre el botón, crece 1.2  */
-.button:hover{
+.button:hover {
     transform: scale(1.2);
 }
 
@@ -70,12 +71,13 @@ body, button, input {
 }
 
 /* Estilos a la tabla del Crud */
-.crudtable{
+.crudtable {
     width: 100%;
     border-collapse: collapse;
 }
 
-.table_header, .table_body td {
+.table_header,
+.table_body td {
     border: 1px solid #cccccc;
     padding: 5px;
 }
@@ -85,7 +87,77 @@ body, button, input {
 }
 
 /* Estilos para el tercer elemento de la tablebody lo que serán los botones de la celda "acciones" */
-.table_body td:nth-child(3){
+.table_body td:nth-child(3) {
     display: flex;
     justify-content: space-around;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  /* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }

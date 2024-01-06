@@ -3,6 +3,12 @@
 const form = document.getElementById('formRegister');
 const nameinput = document.getElementById('nameinput');
 const emailinput = document.getElementById('emailinput');
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn");
+const span = document.getElementsByClassName("close")[0];
+
+
+
 
 //donde vamos a pintar los datos de Usuario//
 const tablebody = document.getElementById('tablebody');
@@ -12,69 +18,87 @@ const tablebody = document.getElementById('tablebody');
 // Json.parse porque esos datos los adquirimos y convertimos en objetos almacenables como los arrays
 // Guardamos en localStore en el navegador bajo la función formData() que son los datos de nuestro formulario:
 
-let data = JSON.parse(localStorage.getItem('formData')) || []; 
+let data = JSON.parse(localStorage.getItem('formData')) || [];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function () {
+    console.log('CLICK');
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 // Creamos funcion para que al evento "submit" click al boton (agregar), almacene la información en memoria
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', function (event) {
 
-//elimina comportamientos por defecto del formulario
+    //elimina comportamientos por defecto del formulario
     event.preventDefault();
-    
+
     const name = nameinput.value;
     const email = emailinput.value;
 
-    if(name && email){
-        const newData = {name,email};
+    if (name && email) {
+        const newData = { name, email };
         data.push(newData);
         saveDataToLocalStorage();
         renderTable();
-    //Función para borrar y volver a iniciar de JavaScript no se necesita crear
+        //Función para borrar y volver a iniciar de JavaScript no se necesita crear
         form.reset();
-    }else{
-    alert ('Favor llenar todos los campos');
+    } else {
+        alert('Favor llenar todos los campos');
 
     }
 })
 
 //Función para guardar los datos del formulario:
-function saveDataToLocalStorage(){
+function saveDataToLocalStorage() {
     localStorage.setItem('formData', JSON.stringify(data));
 }
 
 //Función para renderizar o actualizar el formulario, limpia el contenido de la tabla para nuevo registro:
-function renderTable(){
+function renderTable() {
     tablebody.innerHTML = '';
 
     //Para generar todos los registros del formulario en una tabla necesitamos iterar el "data" (toda la información) y crear la tabla
     // compuesta de un item e index, cada elemento tendrá su puesto en la tabla.
-    data.forEach (function (item, index){
+    data.forEach(function (item, index) {
         const row = document.createElement('tr');
         const nameCell = document.createElement('td');
         const emailCell = document.createElement('td');
         const actionCell = document.createElement('td');
 
-    // Dentro de la celda "action" o acciones creamos dos botones un editar y otro eliminar.
+        // Dentro de la celda "action" o acciones creamos dos botones un editar y otro eliminar.
         const editButton = document.createElement('button')
         const deleteButton = document.createElement('button')
-    
-    // Agregamos el contenido de la celda, texto para name y email.
+
+        // Agregamos el contenido de la celda, texto para name y email.
         nameCell.textContent = item.name;
         emailCell.textContent = item.email;
 
-    // Agregamos el texto en los botones.    
+        // Agregamos el texto en los botones.    
         editButton.textContent = 'Editar';
         deleteButton.textContent = 'Eliminar';
 
-    // asignamos las clases a los botones que aparecen en la celda "acciones".
+        // asignamos las clases a los botones que aparecen en la celda "acciones".
         editButton.classList.add('button', 'button--secundary');
         deleteButton.classList.add('button', 'button--terciary');
 
-    // Eventos de escucha con funciones para los botones de la celda "acciones" editar y eliminar.
-        editButton.addEventListener('click', function(){
+        // Eventos de escucha con funciones para los botones de la celda "acciones" editar y eliminar.
+        editButton.addEventListener('click', function () {
             editData(index);
         })
 
-        deleteButton.addEventListener('click', function(){
+        deleteButton.addEventListener('click', function () {
             deleteData(index);
         })
 
@@ -90,11 +114,11 @@ function renderTable(){
         // Creamos las filas para nuestro tablebody "la que aparece con la data":
         tablebody.appendChild(row);
 
-    })  
+    })
 }
 
 // Confección de las funciones de editar y eliminar
-function editData(index){
+function editData(index) {
     const item = data[index];
     nameinput.value = item.name;
     emailinput.value = item.email;
@@ -103,7 +127,7 @@ function editData(index){
     renderTable();
 }
 
-function deleteData(index){
+function deleteData(index) {
     data.splice(index, 1);
     saveDataToLocalStorage();
     renderTable();
