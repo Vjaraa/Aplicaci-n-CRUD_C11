@@ -3,6 +3,11 @@
 const form = document.getElementById('formRegister');
 const nameinput = document.getElementById('nameinput');
 const emailinput = document.getElementById('emailinput');
+
+const phoneinput = document.getElementById('phoneinput');
+const carreerinput = document.getElementById('carreerinput');
+const campusinput = document.getElementById('campusinput');
+
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn");
 const span = document.getElementsByClassName("close")[0];
@@ -54,6 +59,7 @@ form.addEventListener('submit', function (event) {
     if (name && email && phone && carreer && campus) {
         const newData = { name, email, phone, carreer, campus};
         data.push(newData);
+        console.log('Variable data: ' +  JSON.stringify(data));
         saveDataToLocalStorage();
         renderTable();
         modal.style.display = "none";
@@ -89,6 +95,13 @@ function renderTable() {
         const row = document.createElement('tr');
         const nameCell = document.createElement('td');
         const emailCell = document.createElement('td');
+
+        const phoneCell = document.createElement('td');
+        const carreerCell = document.createElement('td');
+        const campusCell = document.createElement('td');
+
+
+
         const actionCell = document.createElement('td');
 
         // Dentro de la celda "action" o acciones creamos dos botones un editar y otro eliminar.
@@ -98,6 +111,9 @@ function renderTable() {
         // Agregamos el contenido de la celda, texto para name y email.
         nameCell.textContent = item.name;
         emailCell.textContent = item.email;
+        phoneCell.textContent = item.phone;
+        carreerCell.textContent = item.carreer;
+        campusCell.textContent = item.campus;
 
         // Agregamos el texto en los botones.    
         editButton.textContent = 'Editar';
@@ -123,7 +139,13 @@ function renderTable() {
         // Creamos las filas o celdas para los textos que capture en la data:
         row.appendChild(nameCell);
         row.appendChild(emailCell);
+
+        row.appendChild(phoneCell);
+        row.appendChild(carreerCell);
+        row.appendChild(campusCell);
+
         row.appendChild(actionCell);
+        
 
         // Creamos las filas para nuestro tablebody "la que aparece con la data":
         tablebody.appendChild(row);
@@ -136,6 +158,11 @@ function editData(index) {
     const item = data[index];
     nameinput.value = item.name;
     emailinput.value = item.email;
+
+    phoneinput.value = item.phone;
+    carreerinput.value = item.carreer;
+    campusinput.value = item.campus;
+
     data.splice(index, 1);
     saveDataToLocalStorage();
     renderTable();
