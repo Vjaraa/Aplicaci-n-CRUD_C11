@@ -9,7 +9,7 @@ const carreerinput = document.getElementById('carreerinput');
 const campusinput = document.getElementById('campusinput');
 
 const modal = document.getElementById("myModal");
-const btn = document.getElementById("myBtn");
+const btn = document.getElementById("addStudent");
 const span = document.getElementsByClassName("close")[0];
 const btnCancel = document.getElementById("resetbutton");
 
@@ -155,6 +155,7 @@ function renderTable() {
 
 // Confección de las funciones de editar y eliminar
 function editData(index) {
+    modal.style.display = "block";
     const item = data[index];
     nameinput.value = item.name;
     emailinput.value = item.email;
