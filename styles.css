@@ -17,16 +17,17 @@ input {
 
 /* La clase container estará centrada, que es el contenedor "padre" de todo el formulario */
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
-    background: #ffedba;
+    padding: 10px;
+    background: #fff;
 }
 
 .crud_title {
     text-align: center;
-    color: #c29b61;
+    color: #fff;
+
 }
 
 .crud_form {
@@ -34,9 +35,18 @@ input {
 
 }
 
+.title {
+    background: #1ebba3;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+}
+
 .modal-botton {
     padding: 10px 20px;
-    background-color: #ff7d00;
+    background-color: #1ebba3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -52,6 +62,8 @@ input {
     margin-top: 10px;
     font-size: 1rem;
     width: 100%;
+    border-radius: 5px;
+    border: none;
 }
 
 
@@ -62,7 +74,7 @@ form input[type="email"] {
 /* Estilos al botón "padre" o en general  */
 .button {
     padding: 10px 20px;
-    background-color: #ff7d00;
+    background-color: #1ebba3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -87,24 +99,28 @@ form input[type="email"] {
     background-color: rgba(0, 0, 0, 0.35);
     margin-top: 10px;
     color: #fff;
+    width: 30px;
 }
 
 /* Estilos especificos a "botón "terciary" que se crean automaticamente en la celda "acciones"*/
 .button --terciary {
     background-color: rgba(0, 0, 0, 0.35);
     color: #ffff;
+    width: 30px;
 }
 
 /* Estilos a la tabla del Crud */
 .crudtable {
     width: 100%;
-    border-collapse: collapse;
+
 }
 
 .table_header,
 .table_body td {
-    border: 1px solid #ffedba;
+    border: 1px solid #1ebba3;
     padding: 5px;
+    border-radius: 5px;
+
 }
 
 .table_header {
@@ -128,24 +144,23 @@ form input[type="email"] {
     width: 100%;
     height: 100%;
     overflow: auto;
-    
+
 
 }
 
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #c29b61;
+    background-color: #1ebba3;
     margin: auto;
     padding: 0;
-    border: 1px solid #c29b61;
+    border: 1px solid #1ebba3;
     max-width: 600px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
-    border: none;
+    animation-duration: 0.4s border: none;
     border-radius: 5px;
 }
 
@@ -166,7 +181,7 @@ form input[type="email"] {
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #c29b61;
+    background-color: #1ebba3;
     color: white;
     margin-top: 15px;
 }
@@ -204,4 +219,52 @@ form input[type="email"] {
         top: 0;
         opacity: 1
     }
+}
+
+.table_headern {
+    border: 1px solid #1ebba3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+    color: #605f5f;
+}
+
+.table_headere {
+    border: 1px solid #1ebba3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 250px;
+    color: #605f5f;
+}
+
+.table_headert {
+    border: 1px solid #1ebba3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 120px;
+    color: #605f5f;
+}
+
+.table_headerc {
+    border: 1px solid #1ebba3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+    color: #605f5f;
+}
+
+.table_headers {
+    border: 1px solid #1ebba3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+    color: #605f5f;
+}
+
+.table_headera {
+    border: 1px solid #1ebba3;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+    color: #605f5f;
 }
