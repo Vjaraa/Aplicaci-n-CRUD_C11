@@ -291,3 +291,11 @@ form input[type="email"] {
     width: 150px;
     color: #605f5f;
 }
+
+.row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: #1ebba3;
+    font-size: 15px;
+  }
