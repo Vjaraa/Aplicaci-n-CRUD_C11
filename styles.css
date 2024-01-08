@@ -18,14 +18,19 @@ input {
 /* La clase container estará centrada, que es el contenedor "padre" de todo el formulario */
 .container {
     max-width: 1200px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
+    background: #fff;
     padding: 10px;
     background: #fff;
 }
 
 .crud_title {
     text-align: center;
+    color: #fff;
+
     color: #fff;
 
 }
@@ -41,11 +46,21 @@ input {
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
+
+}
+
+.title {
+    background: #1ebba3;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
     padding: 10px;
 }
 
 .modal-botton {
     padding: 10px 20px;
+    background-color: #1ebba3;
     background-color: #1ebba3;
     color: white;
     border: none;
@@ -62,6 +77,8 @@ input {
     margin-top: 10px;
     font-size: 1rem;
     width: 100%;
+    border-radius: 5px;
+    border: none;
     border-radius: 5px;
     border: none;
 }
@@ -109,6 +126,7 @@ form input[type="email"] {
     background-color: rgba(0, 0, 0, 0.35);
     color: #ffff;
     width: 30px;
+    width: 30px;
 }
 
 /* Estilos a la tabla del Crud */
@@ -146,20 +164,24 @@ form input[type="email"] {
     overflow: auto;
 
 
+
 }
 
 /* Modal Content */
 .modal-content {
     position: relative;
     background-color: #1ebba3;
+    background-color: #1ebba3;
     margin: auto;
     padding: 0;
+    border: 1px solid #1ebba3;
     border: 1px solid #1ebba3;
     max-width: 600px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
+    animation-duration: 0.4s border: none;
     animation-duration: 0.4s border: none;
     border-radius: 5px;
 }
@@ -181,6 +203,7 @@ form input[type="email"] {
 
 .modal-header {
     padding: 2px 16px;
+    background-color: #1ebba3;
     background-color: #1ebba3;
     color: white;
     margin-top: 15px;
