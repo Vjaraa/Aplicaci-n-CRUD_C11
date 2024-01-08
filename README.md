@@ -1,5 +1,3 @@
-![Banner](./imagenes/banner.png)
-
 # PROYECTO 2: Aplicación CRUD
 
 ## **ÍNDICE**
@@ -12,12 +10,12 @@
 * ## 1. Intro
 Se desarrolla el segundo proyecto del Bootcamp, llamado "Aplicación CRUD". 
 El proyecto esta diseñado para guardar, a través de un formulario, la lista de alumnos de una Universidad, por lo que se solicitan datos importantes a cada alumno.
-(Nombre, E-mail,	Teléfono,	Carrera	y Sede)
+(Nombre, E-mail, Teléfono,	Carrera	y Sede)
 Con esta información, se creará la base de datos de la universidad.
 
 * ## 2. Prototipo
 * 
-![](./imagenes/example3.png)
+![](./IMG/Prototipo.jpg)
 
 ## 3. Requisitos y entregables
 
