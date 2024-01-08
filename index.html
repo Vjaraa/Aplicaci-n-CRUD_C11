@@ -17,8 +17,8 @@
             <!-- Trigger/Open The Modal -->
             <button id="addStudent" class="modal-botton">Agregar alumno</button>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <!-- Add Modal -->
+            <div id="addModal" class="modal">
 
                 <!-- Modal content -->
                 <div class="modal-content">
@@ -42,6 +42,38 @@
 
 
             </div>
+
+            <!-- Modify Modal -->
+            <div id="modifyModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" id="editclose">&times;</span>
+                        <h2>Agregar alumno</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formModifier" class="crud_form">
+                            <input type="text" placeholder="Nombre" id="nameinput_mod" class="form_input">
+                            <input type="email" placeholder="Email" id="emailinput_mod" class="form_input">
+                            <input type="number" placeholder="Teléfono" id="phoneinput_mod" class="form_input">
+                            <input type="carreer" placeholder="Carrera" id="carreerinput_mod" class="form_input">
+                            <input type="campus" placeholder="Sede" id="campusinput_mod" class="form_input">
+
+                            <button type="reset" id="editresetbutton" class="button button--secundary">Cancelar</button>
+                            <button type="submit" id="editbutton" class="button button--primary">Editar</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            
+
+
+
 
             <!-- Creamos una tabla para que se visualicen los datos -->
             <table class="crudtable">

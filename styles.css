@@ -41,7 +41,7 @@ input {
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
-
+    padding: 10px;
 }
 
 .modal-botton {
@@ -73,13 +73,15 @@ form input[type="email"] {
 
 /* Estilos al botón "padre" o en general  */
 .button {
-    padding: 10px 20px;
+    padding: 5px;
     background-color: #1ebba3;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 15px;
+    width: 70px;
+    margin-bottom: 5px;
+
 }
 
 /* efecto al pasar el mouse sobre el botón, crece 1.2  */
@@ -99,7 +101,7 @@ form input[type="email"] {
     background-color: rgba(0, 0, 0, 0.35);
     margin-top: 10px;
     color: #fff;
-    width: 30px;
+    
 }
 
 /* Estilos especificos a "botón "terciary" que se crean automaticamente en la celda "acciones"*/
@@ -117,10 +119,9 @@ form input[type="email"] {
 
 .table_header,
 .table_body td {
-    border: 1px solid #1ebba3;
     padding: 5px;
-    border-radius: 5px;
-
+    border-bottom: 1px solid #ccc;
+    text-align: center;
 }
 
 .table_header {
@@ -129,7 +130,6 @@ form input[type="email"] {
 
 /* Estilos para el tercer elemento de la tablebody lo que serán los botones de la celda "acciones" */
 .table_body td:nth-child(3) {
-    display: flex;
     justify-content: space-around;
 }
 
@@ -233,7 +233,7 @@ form input[type="email"] {
     border: 1px solid #1ebba3;
     padding: 5px;
     border-radius: 5px;
-    width: 250px;
+    width: 200px;
     color: #605f5f;
 }
 

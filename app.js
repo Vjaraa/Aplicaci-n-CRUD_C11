@@ -1,6 +1,7 @@
 //adquirimos los elementos del DOM donde vamos a ingresar los datos de usuario:
 //declaramos constantes que son variables que no cambian en el tiempo//
-const form = document.getElementById('formRegister');
+const formReg = document.getElementById('formRegister');
+const formMod = document.getElementById('formModifier');
 const nameinput = document.getElementById('nameinput');
 const emailinput = document.getElementById('emailinput');
 
@@ -8,11 +9,22 @@ const phoneinput = document.getElementById('phoneinput');
 const carreerinput = document.getElementById('carreerinput');
 const campusinput = document.getElementById('campusinput');
 
-const modal = document.getElementById("myModal");
+const nameinput_mod = document.getElementById('nameinput_mod');
+const emailinput_mod = document.getElementById('emailinput_mod');
+
+const phoneinput_mod = document.getElementById('phoneinput_mod');
+const carreerinput_mod = document.getElementById('carreerinput_mod');
+const campusinput_mod = document.getElementById('campusinput_mod');
+
+const addModal = document.getElementById("addModal");
+const editModal = document.getElementById("modifyModal");
 const btn = document.getElementById("addStudent");
 const span = document.getElementsByClassName("close")[0];
-const btnCancel = document.getElementById("resetbutton");
+const editSpan = document.getElementById("editclose");
 
+const btnCancel = document.getElementById("resetbutton");
+const btnEdit = document.getElementById("editbutton");
+const btnCancelEdit = document.getElementById("editresetbutton");
 
 
 
@@ -26,26 +38,30 @@ const tablebody = document.getElementById('tablebody');
 
 let data = JSON.parse(localStorage.getItem('formData')) || [];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the addModal 
 btn.onclick = function () {
     console.log('CLICK');
-    modal.style.display = "block";
+    addModal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the addModal
 span.onclick = function () {
-    modal.style.display = "none";
+    addModal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+editSpan.onclick = function (){
+    editModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the addModal, close it
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == addModal) {
+        addModal.style.display = "none";
     }
 }
 
 // Creamos funcion para que al evento "submit" click al boton (agregar), almacene la información en memoria
-form.addEventListener('submit', function (event) {
+formReg.addEventListener('submit', function (event) {
 
     //elimina comportamientos por defecto del formulario
     event.preventDefault();
@@ -62,9 +78,9 @@ form.addEventListener('submit', function (event) {
         console.log('Variable data: ' +  JSON.stringify(data));
         saveDataToLocalStorage();
         renderTable();
-        modal.style.display = "none";
+        addModal.style.display = "none";
         //Función para borrar y volver a iniciar de JavaScript no se necesita crear
-        form.reset();
+        formReg.reset();
     } else {
         alert('Favor llenar todos los campos');
 
@@ -73,8 +89,13 @@ form.addEventListener('submit', function (event) {
 
 
 btnCancel.onclick = function () {
-    form.reset();
-    modal.style.display = "none";
+    formReg.reset();
+    addModal.style.display = "none";
+}
+
+btnCancelEdit.onclick = function () {
+    formMod.reset();
+    editModal.style.display = "none";
 }
 
 
@@ -126,6 +147,7 @@ function renderTable() {
         // Eventos de escucha con funciones para los botones de la celda "acciones" editar y eliminar.
         editButton.addEventListener('click', function () {
             editData(index);
+            
         })
 
         deleteButton.addEventListener('click', function () {
@@ -155,18 +177,42 @@ function renderTable() {
 
 // Confección de las funciones de editar y eliminar
 function editData(index) {
-    modal.style.display = "block";
+
+    editModal.style.display = "block";
+
     const item = data[index];
-    nameinput.value = item.name;
-    emailinput.value = item.email;
 
-    phoneinput.value = item.phone;
-    carreerinput.value = item.carreer;
-    campusinput.value = item.campus;
+    nameinput_mod.value = item.name;
+    emailinput_mod.value = item.email;
+    phoneinput_mod.value = item.phone;
+    carreerinput_mod.value = item.carreer;
+    campusinput_mod.value = item.campus;
 
-    data.splice(index, 1);
+    btnEdit.onclick = function () {
+
+        const name = nameinput_mod.value;
+        const email = emailinput_mod.value;
+        const phone = phoneinput_mod.value;
+        const carreer = carreerinput_mod.value;
+        const campus = campusinput_mod.value;
+
+
+
+        data.splice(index, 1);
+
+
+        const newData = { name, email, phone, carreer, campus};
+        data.push(newData);
+        console.log('Variable data en funcion editar : ' +  JSON.stringify(data));
+        saveDataToLocalStorage();
+        renderTable();
+    }
+    
+   /*  data.splice(index, 1);
+    console.log('Click en editar, objeto data: ' + JSON.stringify(data));
+
     saveDataToLocalStorage();
-    renderTable();
+    renderTable(); */
 }
 
 function deleteData(index) {
